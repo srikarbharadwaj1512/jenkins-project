@@ -11,7 +11,7 @@ pipeline {
         stage('STAGE1') {
             when {
                 expression{
-                             name="REGION", value="us-east1"
+                             name="REGION" value="us-east1"
                 }
             }
             steps {
