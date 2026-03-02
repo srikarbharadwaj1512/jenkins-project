@@ -9,6 +9,11 @@ pipeline {
     
     stages {
         stage('STAGE1') {
+            when {
+                expression{
+                             name="REGION", value="us-east1"
+                }
+            }
             steps {
                 echo "This is stage 1"
                 echo "${params.USER}"
@@ -21,12 +26,14 @@ pipeline {
                 """
             }
         }
-        stage('Build') {
+        stage('STAGE2') {
             steps {
-                echo "Building Java code"
+                catchError(buildResult: "UNSTABLE", stageResult: "FAILURE"){
+                    
                 sh """
-                    sleep 5
+                    exit 1
                 """
+                }
             }
         }
     }
