@@ -10,9 +10,8 @@ pipeline {
     stages {
         stage('STAGE1') {
             when {
-                expression{
-                             name="REGION" value="us-east1"
-                }
+                
+                             environment name: "REGION", value: "us-east1"
             }
             steps {
                 echo "This is stage 1"
