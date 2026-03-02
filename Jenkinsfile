@@ -35,5 +35,11 @@ pipeline {
                 }
             }
         }
+        stage('STAGE3') {
+            steps {
+                echo "This is stage 3"
+                sh """
+                    whoami
+                """
     }
 }
