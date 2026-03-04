@@ -1,0 +1,21 @@
+pipeline{
+    agent None or any or label
+    agent {label1 label2}
+    agent {label1 || label2}
+    agent {}
+        parameters{
+            string()
+            booleanParam()
+            text()
+            choice()
+            password()
+
+        }
+        stages{
+            stage ('Build'){
+                steps{
+
+                }
+            }
+        }
+}
