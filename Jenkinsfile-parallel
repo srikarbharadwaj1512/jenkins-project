@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    options{
+        retry(2)
+        timeout(time: 1, unit: 'MINUTES')
+    }
 
     stages {
         stage('STAGE1') {
