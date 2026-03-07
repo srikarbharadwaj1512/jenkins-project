@@ -1,0 +1,18 @@
+pipeline{
+    agent none{
+        parameters{
+            string(name: 'Srikar', defaultValue: 'Srikar', description: 'Enter the name')
+        }
+        environment{
+            APP_NAME = "DEVOPS"
+        }
+        stages{
+            stage{
+                steps{
+                    echo "Application name: ${APP_NAME}"
+                }
+            }
+        }
+        
+    }
+}
